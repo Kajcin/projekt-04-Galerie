@@ -41,7 +41,11 @@ všech obrázků v galerii
 nebo něco podobného
 - při změně obrázku odstranit zvýraznění z předchozího obrázku a zvýraznit nový
 */
-
+let body = document.querySelector("body");
+let sipkaVpravo = document.querySelector("#sipka-vpravo");
+let sipkaVlevo = document.querySelector("#sipka-vlevo");
+let pocitadlo = document.querySelector("#pocitadlo");
+let foto = document.querySelector("#foto");
 
 let obrazky = [
     'kocka.jpg',
@@ -51,3 +55,32 @@ let obrazky = [
     'sova.jpg',
     'zajic.jpg'
 ];
+
+let index = 0
+foto.src = "obrazky/kocka.jpg"
+pocitadlo.innerHTML += `<p> ${obrazky[index]} ${index + 1} / ${obrazky.length} </p>`
+
+
+sipkaVpravo.addEventListener("click", changeFoto1)
+function changeFoto1 (){
+        index += 1;
+            if (index > 5) {
+                index = 0
+            }
+        let source = "obrazky/" + obrazky[index]
+        pocitadlo.innerHTML = `<p> ${obrazky[index]} ${index + 1} / ${obrazky.length} </p>`
+        foto.src = source
+    console.log(index)
+}
+
+sipkaVlevo.addEventListener("click", changeFoto2)
+function changeFoto2 (){
+        index -= 1;
+            if (index < 0) {
+                index = 5
+            }
+        let source = "obrazky/" + obrazky[index]
+        pocitadlo.innerHTML = `<p> ${obrazky[index]} ${index + 1} / ${obrazky.length} </p>`
+        foto.src = source
+    console.log(index)
+}
