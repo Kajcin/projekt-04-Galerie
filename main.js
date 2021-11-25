@@ -46,6 +46,7 @@ let sipkaVpravo = document.querySelector("#sipka-vpravo");
 let sipkaVlevo = document.querySelector("#sipka-vlevo");
 let pocitadlo = document.querySelector("#pocitadlo");
 let foto = document.querySelector("#foto");
+let nahled = document.querySelector("#nahled");
 
 let obrazky = [
     'kocka.jpg',
@@ -59,6 +60,16 @@ let obrazky = [
 let index = 0
 foto.src = "obrazky/kocka.jpg"
 pocitadlo.innerHTML += `<p> ${obrazky[index]} ${index + 1} / ${obrazky.length} </p>`
+
+nahled.addEventListener("load", zobrazNahled());
+function zobrazNahled () { 
+    for (let i = 0; i < obrazky.length; i++) {
+        let source = "obrazky/" + obrazky[index]
+        nahled.innerHTML += `<img id="foto-nahled" src="${source}" alt="${obrazky[index]}" width="100" height="80">`;
+        index += 1
+    }
+}
+
 
 
 sipkaVpravo.addEventListener("click", changeFoto1)

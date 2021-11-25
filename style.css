@@ -68,3 +68,10 @@ h1 {
 	text-align: center;
 	color: white;
 }
+
+.nahled {
+	
+	display: flex;
+	align-items: center;
+	margin: 30px auto;
+}
