@@ -70,8 +70,6 @@ function zobrazNahled () {
     }
 }
 
-
-
 sipkaVpravo.addEventListener("click", changeFoto1)
 function changeFoto1 (){
         index += 1;
@@ -80,6 +78,7 @@ function changeFoto1 (){
             }
         let source = "obrazky/" + obrazky[index]
         pocitadlo.innerHTML = `<p> ${obrazky[index]} ${index + 1} / ${obrazky.length} </p>`
+        
         foto.src = source
     console.log(index)
 }
